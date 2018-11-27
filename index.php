@@ -48,17 +48,32 @@ class Person
     {
         return $this->password;
     }
+
+    private function displayName() {
+        return $this->firstname . " " . $this->lastname;
+    }
+
+    public function getDisplayName() {
+        return $this->displayName();
+    }
+
+    public function getDisplayNameWithNationality() {
+        return $this->displayName() . " (" . self::$nationality . ")";
+    }
 }
 
 // Appel d'un propriété static à partir de la class Person
 //var_dump(Person::$nationality);
 
 // Création d'un objet de type Person
-//$jane = new Person(
-//    "Jane",
-//    "Die",
-//    "janeestalamaison");
-//
+$jane = new Person(
+    "Jane",
+    "Die",
+    "janeestalamaison");
+
+var_dump($jane->getDisplayName());
+var_dump($jane->getDisplayNameWithNationality());
+
 //var_dump($jane);
 
 //$bibi->setFirstname("Bibi");
