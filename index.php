@@ -12,6 +12,10 @@ class Person {
         $this->firstname = $valueFirstName;
     }
 
+    public function getFirstname() {
+        return $this->firstname;
+    }
+
     public function setLastname($valueLastName) {
         $this->lastname = $valueLastName;
     }
@@ -28,15 +32,15 @@ $bibi->setFirstname("Bibi");
 $bibi->setLastname("Bob");
 $bibi->setPassword("bibiestalamaison");
 
-var_dump($bibi);
+var_dump($bibi->getFirstname());
 
-$john = new Person();
-
-$john->setFirstname("John");
-$john->setLastname("Doe");
-$john->setPassword("johnestalamaison");
-
-var_dump($john);
+//$john = new Person();
+//
+//$john->setFirstname("John");
+//$john->setLastname("Doe");
+//$john->setPassword("johnestalamaison");
+//
+//var_dump($john);
 
 
 
