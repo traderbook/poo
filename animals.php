@@ -48,7 +48,7 @@ class Person {
         $this->dogs[] = $pDog;
     }
 
-    public function getDog(): array
+    public function getDogs(): array
     {
         return $this->dogs;
     }
@@ -106,7 +106,13 @@ $johnny->setOwner($john);
 $john->buy($boby);
 $john->buy($johnny);
 
-// Dog = $john->getDog()
-$pet = $john->getDog();
+// Dog = $john->getDogs()
+$pet = $john->getDogs();
 
-var_dump($john);
+$dogs = $john->getDogs();
+
+$nDogs = count($dogs);
+
+foreach ($dogs as $dog) {
+    var_dump($dog->getName());
+}
