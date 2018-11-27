@@ -20,8 +20,16 @@ class Person {
         $this->lastname = $valueLastName;
     }
 
+    public function getLastname() {
+        return $this->lastname;
+    }
+
     public function setPassword($valuePassword) {
         $this->password = $valuePassword;
+    }
+
+    public function getPassword() {
+        return $this->password;
     }
 }
 
@@ -33,6 +41,8 @@ $bibi->setLastname("Bob");
 $bibi->setPassword("bibiestalamaison");
 
 var_dump($bibi->getFirstname());
+var_dump($bibi->getLastname());
+var_dump($bibi->getPassword());
 
 //$john = new Person();
 //
