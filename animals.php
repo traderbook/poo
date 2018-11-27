@@ -3,7 +3,7 @@
 class Person {
     private $firstname;
     private $lastname;
-    private $dog;
+    private $dogs = array();
 
     public function __construct(string $pFirstname, string $pLastname)
     {
@@ -45,12 +45,12 @@ class Person {
 
     public function buy(Dog $pDog)
     {
-        $this->dog = $pDog;
+        $this->dogs[] = $pDog;
     }
 
-    public function getDog(): Dog
+    public function getDog(): array
     {
-        return $this->dog;
+        return $this->dogs;
     }
 }
 
@@ -96,14 +96,17 @@ class Dog {
 }
 
 $boby = new Dog("Boby", 1);
+$johnny = new Dog("Johnny", 1);
 
 $john = new Person("John", "Doe");
 
 $boby->setOwner($john);
+$johnny->setOwner($john);
 
 $john->buy($boby);
+$john->buy($johnny);
 
 // Dog = $john->getDog()
 $pet = $john->getDog();
 
-var_dump($pet->getName());
+var_dump($john);
