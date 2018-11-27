@@ -1,6 +1,7 @@
 <?php
 
-class Person {
+class Person
+{
     private $firstname;
     private $lastname;
     private $dogs = array();
@@ -52,9 +53,26 @@ class Person {
     {
         return $this->dogs;
     }
+
+    public function giveMeDogsName()
+    {
+        $dogs = $this->getDogs();
+        $nDogs = count($dogs);
+
+        $listDog = array();
+
+        foreach ($dogs as $dog) {
+            $listDog[] = $dog->getName();
+        }
+
+        $listDog = implode(', ', $listDog);
+
+        return "J'ai $nDogs chiens: $listDog";
+    }
 }
 
-class Dog {
+class Dog
+{
     private $name;
     private $years;
     private $owner;
@@ -109,10 +127,8 @@ $john->buy($johnny);
 // Dog = $john->getDogs()
 $pet = $john->getDogs();
 
-$dogs = $john->getDogs();
+var_dump($john->giveMeDogsName());
 
-$nDogs = count($dogs);
-
-foreach ($dogs as $dog) {
-    var_dump($dog->getName());
-}
+//foreach ($dogs as $dog) {
+//    var_dump($dog->getName());
+//}
