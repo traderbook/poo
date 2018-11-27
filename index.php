@@ -9,6 +9,9 @@ class Person
     // Je ne peux pas accéder à la propriété privée password.
     private $password;
 
+    // Propiété statique
+    public static $nationality = "french";
+
     public function __construct($valueFirstname, $valueLastname, $valuePassword)
     {
         $this->firstname = $valueFirstname;
@@ -47,13 +50,16 @@ class Person
     }
 }
 
-// Création d'un objet de type Person
-$jane = new Person(
-    "Jane",
-    "Die",
-    "janeestalamaison");
+// Appel d'un propriété static à partir de la class Person
+//var_dump(Person::$nationality);
 
-var_dump($jane);
+// Création d'un objet de type Person
+//$jane = new Person(
+//    "Jane",
+//    "Die",
+//    "janeestalamaison");
+//
+//var_dump($jane);
 
 //$bibi->setFirstname("Bibi");
 //$bibi->setLastname("Bob");
@@ -63,17 +69,17 @@ var_dump($jane);
 //var_dump($bibi->getLastname());
 //var_dump($bibi->getPassword());
 
-$john = new Person(
-    "John",
-    "Doe",
-    "johnestalamaison"
-);
-
-$jane->setLastname(
-    $john->getLastname()
-);
-
-var_dump($jane);
+//$john = new Person(
+//    "John",
+//    "Doe",
+//    "johnestalamaison"
+//);
+//
+//$jane->setLastname(
+//    $john->getLastname()
+//);
+//
+//var_dump($jane);
 
 //$john->setFirstname("John");
 //$john->setLastname("Doe");
