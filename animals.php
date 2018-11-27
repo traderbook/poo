@@ -127,8 +127,16 @@ $john->buy($johnny);
 // Dog = $john->getDogs()
 $pet = $john->getDogs();
 
-var_dump($john->giveMeDogsName());
+//var_dump($john->giveMeDogsName());
 
 //foreach ($dogs as $dog) {
 //    var_dump($dog->getName());
 //}
+
+$title = "Mon super article de blog";
+// mon-super-article-de-blog
+
+$explodedTitle = explode(' ', $title);
+
+
+var_dump(strtolower(implode('-', $explodedTitle)));
