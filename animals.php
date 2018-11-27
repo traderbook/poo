@@ -3,6 +3,7 @@
 class Person {
     private $firstname;
     private $lastname;
+    private $dog;
 
     public function __construct($pFirstname, $pLastname)
     {
@@ -41,11 +42,17 @@ class Person {
     {
         $this->lastname = $lastname;
     }
+
+    public function buy($pDog)
+    {
+        $this->dog = $pDog;
+    }
 }
 
 class Dog {
     private $name;
     private $years;
+    private $owner;
 
     public function __construct($pName, $pYears)
     {
@@ -80,4 +87,8 @@ class Dog {
 
 $boby = new Dog("Boby", 1);
 
-var_dump($boby);
+$john = new Person("John", "Doe");
+
+$john->buy($boby);
+
+var_dump($john);
