@@ -48,12 +48,12 @@ class Person
 }
 
 // Création d'un objet de type Person
-$bibi = new Person(
-    "Bibi",
-    "Bob",
-    "bibiestalamaison");
+$jane = new Person(
+    "Jane",
+    "Die",
+    "janeestalamaison");
 
-var_dump($bibi);
+var_dump($jane);
 
 //$bibi->setFirstname("Bibi");
 //$bibi->setLastname("Bob");
@@ -69,11 +69,17 @@ $john = new Person(
     "johnestalamaison"
 );
 
+$jane->setLastname(
+    $john->getLastname()
+);
+
+var_dump($jane);
+
 //$john->setFirstname("John");
 //$john->setLastname("Doe");
 //$john->setPassword("johnestalamaison");
 //
-var_dump($john);
+//var_dump($john);
 
 
 
