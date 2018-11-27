@@ -111,6 +111,10 @@ class Dog
     {
         $this->owner = $pOwner;
     }
+
+    public function addYear() {
+        $this->years++;
+    }
 }
 
 $boby = new Dog("Boby", 1);
@@ -124,6 +128,12 @@ $johnny->setOwner($john);
 $john->buy($boby);
 $john->buy($johnny);
 
+$boby->addYear();
+var_dump($boby);
+$johnny->addYear();
+$johnny->addYear();
+var_dump($johnny);
+
 // Dog = $john->getDogs()
 $pet = $john->getDogs();
 
@@ -133,10 +143,9 @@ $pet = $john->getDogs();
 //    var_dump($dog->getName());
 //}
 
-$title = "Mon super article de blog";
+//$title = "Mon super article de blog";
 // mon-super-article-de-blog
 
-$explodedTitle = explode(' ', $title);
+//$explodedTitle = explode(' ', $title);
 
-
-var_dump(strtolower(implode('-', $explodedTitle)));
+//var_dump(strtolower(implode('-', $explodedTitle)));
