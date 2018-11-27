@@ -5,7 +5,7 @@ class Person {
     private $lastname;
     private $dog;
 
-    public function __construct($pFirstname, $pLastname)
+    public function __construct(string $pFirstname, string $pLastname)
     {
         $this->firstname = $pFirstname;
         $this->lastname = $pLastname;
@@ -43,9 +43,14 @@ class Person {
         $this->lastname = $lastname;
     }
 
-    public function buy($pDog)
+    public function buy(Dog $pDog)
     {
         $this->dog = $pDog;
+    }
+
+    public function getDog(): Dog
+    {
+        return $this->dog;
     }
 }
 
@@ -63,7 +68,7 @@ class Dog {
     /**
      * @return mixed
      */
-    public function getName()
+    public function getName(): String
     {
         return $this->name;
     }
@@ -71,7 +76,7 @@ class Dog {
     /**
      * @return mixed
      */
-    public function getYears()
+    public function getYears(): Int
     {
         return $this->years;
     }
@@ -83,12 +88,22 @@ class Dog {
     {
         $this->years = $years;
     }
+
+    public function setOwner($pOwner)
+    {
+        $this->owner = $pOwner;
+    }
 }
 
 $boby = new Dog("Boby", 1);
 
 $john = new Person("John", "Doe");
 
+$boby->setOwner($john);
+
 $john->buy($boby);
 
-var_dump($john);
+// Dog = $john->getDog()
+$pet = $john->getDog();
+
+var_dump($pet->getName());
