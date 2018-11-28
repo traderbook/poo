@@ -1,5 +1,7 @@
 <?php
 
+namespace libs;
+
 abstract class Animal {
     private $year = 0;
     private $sex = "NC";

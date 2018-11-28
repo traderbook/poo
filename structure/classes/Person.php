@@ -1,5 +1,9 @@
 <?php
 
+namespace classes;
+
+use libs\Mammal;
+
 class Person extends Mammal {
     private $firstname;
     private $lastname;
