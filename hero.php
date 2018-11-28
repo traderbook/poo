@@ -1,15 +1,24 @@
 <?php
 
-abstract class Weapon {
-    public function choc() {
-        var_dump("Je tape...");
+interface Weapon {
+    public function choc();
+}
+
+class Sword implements Weapon {
+    public function choc()
+    {
+        var_dump("Je tranche...");
+    }
+
+}
+class Axe implements Weapon {
+    public function choc()
+    {
+        var_dump("Ca defonce...");
     }
 }
 
-class Sword extends Weapon { }
-class Axe extends Weapon { }
-
-class Person {
+class Person implements Weapon {
     private $name;
     private $weapon;
 
@@ -49,7 +58,7 @@ $hero = new Person();
 $hero->setName("Bibi");
 
 // A commenter ou décommenter
-//$hero->setWeapon($axe);
+$hero->setWeapon($sword);
 
 var_dump($hero);
 
