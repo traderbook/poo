@@ -3,7 +3,7 @@
 abstract class Animal {
     private $year = 0;
     private $sex = "NC";
-    private $color;
+    protected $color;
 
     public function __construct($pColor, $pYear, $pSex)
     {
@@ -49,6 +49,10 @@ abstract class Oviparous extends Animal {
 
 class Gecko extends Oviparous {
     private $name;
+
+    public function iAm() {
+        return "Je suis un " . get_class($this) . " et je suis " . $this->color;
+    }
 }
 
 class Person extends Mammal {
@@ -62,16 +66,31 @@ class Person extends Mammal {
         $this->firstname = $pFirstname;
         $this->lastname = $pLastname;
     }
+
+    public function iAm() {
+        return "Je suis une " . get_class($this) . " et je suis " . $this->color;
+    }
 }
 
 class Dog extends Mammal {
     private $name;
+
+    public function iAm() {
+        return "Je suis un " . get_class($this) . " et je suis " . $this->color;
+    }
 }
 
 $person = new Person("john", "doe", "beige", 1, "male");
 $dog = new Dog("noir", 2, "female");
 $gecko = new Gecko("vert", 1, "male");
 
-var_dump($person);
-var_dump($dog);
-var_dump($gecko);
+var_dump($person->iAm());
+var_dump($dog->iAm());
+var_dump($gecko->iAm());
+
+//var_dump(get_class($person));
+//var_dump(get_parent_class($person));
+
+//var_dump($person);
+//var_dump($dog);
+//var_dump($gecko);
