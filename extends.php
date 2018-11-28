@@ -1,6 +1,6 @@
 <?php
 
-class Animal {
+abstract class Animal {
     private $year = 0;
     private $sex = "NC";
     private $color;
@@ -25,7 +25,7 @@ class Animal {
     }
 }
 
-class Mammal extends Animal {
+abstract class Mammal extends Animal {
 /*    private $color;
 
     public function __construct($pColor, $pYear, $pSex)
@@ -36,7 +36,7 @@ class Mammal extends Animal {
 */
 }
 
-class Oviparous extends Animal {
+abstract class Oviparous extends Animal {
     /*    private $color;
 
         public function __construct($pColor, $pYear, $pSex)
