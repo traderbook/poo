@@ -1,2 +1,4 @@
 .idea
 poo.iml
+*.adoc
+.asciidoctor
